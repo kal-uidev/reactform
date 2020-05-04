@@ -39,3 +39,6 @@ button:hover{
 #form-output{
   list-style-type: none;
 }
+#form-output li{
+  margin-bottom: 20px;
+}

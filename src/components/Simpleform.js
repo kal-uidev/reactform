@@ -6,7 +6,7 @@ import FormData from '../components/FormData'
          super(props)
         this.inputRef = React.createRef();
         this.showformdata = false;
-
+        this.users = [];
          this.state = {
              
               username:"defaultname",
@@ -23,6 +23,7 @@ import FormData from '../components/FormData'
      handleSubmit = (e) => {
          e.preventDefault();
         this.showformdata=true;
+        this.users.push(this.state);
         this.setState({
             showdata:"true"
         })
@@ -51,7 +52,7 @@ componentDidMount(){
 }
      
     render() {
-        this.objArr = Object.entries(this.state);
+        // this.objArr = Object.entries(this.state);
         return (
             <div>
             <div id="simple-form">
@@ -84,7 +85,7 @@ componentDidMount(){
                 </form>
                 
             </div>
-    <FormData stateObj={this.objArr} show={this.showformdata}></FormData>
+    <FormData users={this.users} show={this.showformdata}></FormData>
     </div>
         )
     }
